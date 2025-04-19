@@ -2,6 +2,7 @@ from pypresence import Presence
 import tkinter
 from tkinter import ttk
 import sv_ttk
+import time
 
 print("Welcome to OmniRPC!")
 
@@ -16,7 +17,7 @@ def start():
         presencekwargs["state"] = stateset.get()
     if detailset.get():
         presencekwargs["details"] = detailset.get()
-
+    
     presence.update(
         large_image="minecraft_1_", 
         start=1306448978,
@@ -25,8 +26,9 @@ def start():
     print("Presence Updated")
     deactbut.config(state="normal")
 
-def stop():
-    presence.clear()
+def stop(): 
+    time.sleep(2)
+    print(presence.clear())
     print("Presence Cleared")
     deactbut.config(state="disabled")
 
